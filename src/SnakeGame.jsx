@@ -84,12 +84,22 @@ function SnakeGame() {
                 setIsRunning(true);
             }
         };
+        const PauseGameOnSpaceBar = (e) => {
+            const key = e.key;
+            if (isRunning && key == ' ') {
+                setIsRunning(false)
+            }
+        }
         window.addEventListener('keydown', handleDirection);
         window.addEventListener('keydown', startGameOnKeyPress);
+        window.addEventListener('keydown', PauseGameOnSpaceBar);
         return () => {
             clearInterval(intervalRef.current);
             window.removeEventListener('keydown', handleDirection);
             window.removeEventListener('keydown', startGameOnKeyPress);
+            window.removeEventListener('keydown', PauseGameOnSpaceBar);
+
+
         };
     }, [isRunning, isModalOpen]);
 
