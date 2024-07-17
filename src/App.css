@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000103;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: whitesmoke
+}
+
+.game-container {
+    height: 30rem;
+    width: 30rem;
+    border: 2px solid red;
+
+    border-style: dashed;
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+}
+
+/* .cell {} */
+
+.snake {
+    background-color: yellowgreen;
+    border-radius: 30%;
+    animation: bulge 1s infinite alternate;
+
+}
+
+.food {
+    background-color: #F13030;
+    border-radius: 50%;
+    animation: bulge 1s infinite alternate;
+}
+
+@keyframes bulge {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.scorecard-modal {
+    height: 20rem;
+    width: 25rem;
+    border: 2px solid black;
+    position: fixed;
+    top: 25%;
+    left: 35%;
+    height: 20rem;
+    width: 25rem;
+    border: none;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+
+}
+
+.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+
+.scores {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.playagain {
+    margin-top: 20px;
+    align-self: center;
+}
